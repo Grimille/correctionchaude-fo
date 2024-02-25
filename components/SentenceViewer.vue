@@ -1,42 +1,51 @@
 <template>
-  <div class="sentence-viewer" v-if="picked">
-    <span class="not-french">{{ picked.key }}</span>
-    <span class="french" v-html="styledPickedValue"></span>
+  <div class="sentence-viewer" v-if="sentence">
+    <span class="not-french">{{sentence.bad }}</span>
+    <span class="french" v-html="renderedGoodSentence"></span>
   </div>
 </template>
 
 <script lang="ts" setup>
-import dataset from '~/assets/dataset.json';
-import { onBeforeMount, ref } from 'vue';
+import { type Sentence } from '~/types/Sentence';
 
-type Sentence = {
-  key: string,
-  value: string
-};
-
-const picked = ref<Sentence>();
-const pick = () => {
-  const keys = Object.keys(dataset);
-  const length = keys.length;
-  const randomIndex = Math.floor(Math.random() * length);
-  
-  picked.value = {
-    key: keys[randomIndex],
-    value: dataset[keys[randomIndex]]
-  };
-}
-
-const styledPickedValue = computed(() => {
-  return picked.value?.value;
+const props = withDefaults(defineProps<{ sentence: Sentence }>(), {
+  sentence: undefined
 });
 
-onBeforeMount(() => {
-  pick();
+const RENDER_AS_FRENCH = true;
+const renderedGoodSentence = computed(() => {
+  if (!RENDER_AS_FRENCH) {
+    return props.sentence?.good;
+  }
+
+  const chars = props.sentence?.good.split('');
+  const colourMapping = [
+    'blue',
+    'red',
+    'white'
+  ];
+  let lastIndex = -1;
+  
+  const randomColour = () => {
+    let randomIndex;
+
+    do {
+      randomIndex = Math.floor(Math.random() * colourMapping.length);
+    }
+    while(lastIndex === randomIndex);
+
+    lastIndex = randomIndex;
+    return colourMapping[randomIndex];
+  };
+
+  return chars?.map((char) => {
+    const colour = char !== ' ' ? randomColour(): '';
+    return `<span class="${colour}">${char}</span>`;
+  }).join('');
 });
 </script>
 
 <style lang="scss" scoped>
-
 .sentence-viewer {
   display: flex;
   flex-flow: column nowrap;
