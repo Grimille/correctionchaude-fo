@@ -18,6 +18,35 @@ import { type Sentence } from '~/types/Sentence';
 import { computed, onBeforeMount } from 'vue';
 import dataset from '~/assets/dataset.json';
 
+useHead({
+  htmlAttrs: {
+    lang: 'fr'
+  },
+  link: [
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+    { rel: 'manifest', href: '/site.webmanifest' },
+    { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#000091' }
+  ],
+  meta: [
+    { name: 'msapplication-TileColor', content: '#ffffff' },
+    { name: 'theme-color', content: '#ffffff' },
+    { name: 'description', content: 'Marre des anglicisme au bureau ? Correction Chaude est là pour t\'aider à trouver des alternatives en français !' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://correctionchaude.fr' },
+    { property: 'og:title', content: 'Correction Chaude — Corrige les angliscismes de tes collègues !' },
+    { property: 'og:description', content: 'Marre des anglicisme au bureau ? Correction Chaude est là pour t\'aider à trouver des alternatives en français !' },
+    { property: 'og:image', content: 'https://correctionchaude.fr/correction-chaude-meta.jpg' },
+    { property: 'twitter:card', content: 'summary_large_image' },
+    { property: 'twitter:url', content: 'https://correctionchaude.fr' },
+    { property: 'twitter:title', content: 'Correction Chaude — Corrige les angliscismes de tes collègues !' },
+    { property: 'twitter:description', content: 'Marre des anglicisme au bureau ? Correction Chaude est là pour t\'aider à trouver des alternatives en français !' },
+    { property: 'twitter:image', content: 'https://correctionchaude.fr/correction-chaude-meta.jpg' }
+  ],
+  title: 'Correction Chaude — Corrige les angliscismes de tes collègues !',
+});
+
 const sentences = ref<Record<string, string>>(dataset);
 const picked = ref<Sentence | undefined>(undefined);
 const year = computed(() => new Date().getFullYear());
