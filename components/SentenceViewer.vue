@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 import { type Sentence } from '~/types/Sentence';
+import { useFrenchify } from '~/composables/useFrenchify';
 
 const props = withDefaults(defineProps<{ sentence: Sentence }>(), {
   sentence: undefined
@@ -18,30 +19,7 @@ const renderedGoodSentence = computed(() => {
     return props.sentence?.good;
   }
 
-  const chars = props.sentence?.good.split('');
-  const colourMapping = [
-    'blue',
-    'red',
-    'white'
-  ];
-  let lastIndex = -1;
-  
-  const randomColour = () => {
-    let randomIndex;
-
-    do {
-      randomIndex = Math.floor(Math.random() * colourMapping.length);
-    }
-    while(lastIndex === randomIndex);
-
-    lastIndex = randomIndex;
-    return colourMapping[randomIndex];
-  };
-
-  return chars?.map((char) => {
-    const colour = char !== ' ' ? randomColour(): '';
-    return `<span class="${colour}">${char}</span>`;
-  }).join('');
+  return useFrenchify(props.sentence?.good);
 });
 </script>
 
@@ -52,14 +30,15 @@ const renderedGoodSentence = computed(() => {
   justify-content: center;
   align-items: center;
   font-family: bangers;
-  font-size: 2em;
   color: $black;
   text-align: center;
   margin: 1em 0;
+  max-width: 960px;
 
   .not-french {
     position: relative;
     margin-right: 0.5em;
+    margin-bottom: 0.5em;
     font-size: $font__size__xxl;
 
     &::after {
@@ -76,6 +55,30 @@ const renderedGoodSentence = computed(() => {
   .french {
     font-family: barrio;
     font-size: $font__size__3xl;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .sentence-viewer {
+    .not-french {
+      font-size: $font__size__xl;
+    }
+
+    .french {
+      font-size: $font__size__xxl;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .sentence-viewer {
+    .not-french {
+      font-size: $font__size__large;
+    }
+
+    .french {
+      font-size: $font__size__xl;
+    }
   }
 }
 </style>

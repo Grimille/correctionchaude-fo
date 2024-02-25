@@ -27,8 +27,8 @@
     }
     .brand-tagline {
       font-family: bangers, sans-serif;
-      font-size: $font__size__small;
-      color: $black;
+      font-size: $font__size__normal;
+      color: lighten($black, 20);
     }
   }
 }

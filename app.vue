@@ -8,29 +8,36 @@
     </main>
     <footer>
       <p>© {{ year }} Correction Chaude</p>
-      <p>Fait avec humour par Grimille</p>
+      <p>Fait avec humour par <a href="https://github.com/Grimille" target="_blank">Grimille</a></p>
     </footer>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed, onBeforeMount } from 'vue';
 import { type Sentence } from '~/types/Sentence';
+import { computed, onBeforeMount } from 'vue';
 import dataset from '~/assets/dataset.json';
 
 const sentences = ref<Record<string, string>>(dataset);
 const picked = ref<Sentence | undefined>(undefined);
 const year = computed(() => new Date().getFullYear());
 
+let currentIndex: number = -1;
+
 const pick = () => {
   const keys = Object.keys(sentences.value);
   const length = keys.length;
-  const randomIndex = Math.floor(Math.random() * length);
+  let randomIndex;
 
+  do {
+    randomIndex = Math.floor(Math.random() * length);
+  } while (randomIndex === currentIndex);
+  
   picked.value = {
     bad: keys[randomIndex],
     good: sentences.value[keys[randomIndex]]
   };
+  currentIndex = randomIndex;
 }
 
 onBeforeMount(() => {
@@ -55,6 +62,7 @@ body {
   font-family: bangers;
   color: $black;
   overflow: hidden;
+  font-size: 16px;
 }
 
 #__nuxt {
@@ -87,5 +95,9 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+a {
+  color: $blue;
 }
 </style>
