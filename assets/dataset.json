@@ -16,7 +16,6 @@
   "J'ai passé un hotfix sur la prod": "J'ai déployé une correction en urgence sur la production.",
   "Il manque un endpoint sur l'API": "Il manque un point de terminaison sur l'API.",
   "Il faut faire un rollback": "Il faut revenir en arrière.",
-  "Je t'ajoute dans la boucle": "Je te mets en copie du courriel.",
   "Je suis en charge de l'onboarding": "Je suis en charge de l'intégration.",
   "Je suis en charge de l'offboarding": "Je suis en charge du désengagement.",
   "Je suis en charge du reporting": "Je suis en charge du compte-rendu.",
@@ -25,5 +24,6 @@
   "Il faut faire un follow-up": "Il faut faire un suivi.",
   "Il faut envoyer les chiffres de la BI": "Il faut envoyer les chiffres de l'informatique décisionnelle.",
   "Il faut sortir des KPIs": "Il faut exporter des indicateurs clés de performance.",
-  "J'ai chamboulé la roadmap": "J'ai modifié la feuille de route."
+  "J'ai chamboulé la roadmap": "J'ai modifié la feuille de route.",
+  "On fait un afterwork lundi soir ?": "On fait un pot lundi soir ?"
 }
