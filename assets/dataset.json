@@ -46,5 +46,8 @@
   "Je vais schedule une réunion pour demain" : "Je vais planifier une réunion pour demain.",
   "Je vais check les disponibilités des participants" : "Je vais vérifier les disponibilités des participants",
   "Je vais prendre un break" : "Je vais faire une pause.",
-  "Je vais share le document avec l'équipe" : "Je vais partager le document avec l'équipe."
+  "Je vais share le document avec l'équipe" : "Je vais partager le document avec l'équipe.",
+  "On le fait en quick 'n dirty" : "On le fait rapidement et sans fioritures.",
+  "Lance le sujet en stand-up" : "Lance le sujet en réunion debout.",
+  "Je reste en backup si besoin" : "Je reste en soutien si besoin."
 }
