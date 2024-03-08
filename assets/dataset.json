@@ -49,5 +49,8 @@
   "Je vais share le document avec l'équipe" : "Je vais partager le document avec l'équipe.",
   "On le fait en quick 'n dirty" : "On le fait rapidement et sans fioritures.",
   "Lance le sujet en stand-up" : "Lance le sujet en réunion debout.",
-  "Je reste en backup si besoin" : "Je reste en soutien si besoin."
+  "Je reste en backup si besoin" : "Je reste en soutien si besoin.",
+  "On a besoin de quick wins pour ce client" : "On a besoin de victoires rapides pour ce client.",
+  "Je l'ai testé sur un side project" : "Je l'ai testé sur un projet personnel annexe.",
+  "J'ai revu tout le workflow d'authentification" : "J'ai revu tout le processus d'authentification."
 }
