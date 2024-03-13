@@ -52,5 +52,18 @@
   "Je reste en backup si besoin" : "Je reste en soutien si besoin.",
   "On a besoin de quick wins pour ce client" : "On a besoin de victoires rapides pour ce client.",
   "Je l'ai testé sur un side project" : "Je l'ai testé sur un projet personnel annexe.",
-  "J'ai revu tout le workflow d'authentification" : "J'ai revu tout le processus d'authentification."
+  "J'ai revu tout le workflow d'authentification" : "J'ai revu tout le processus d'authentification.",
+  "C'est une feature nice-to-have et non pas must-have" : "C'est une fonctionnalité sympathique à avoir mais elle n'est pas indispensable.",
+  "Ça smell pas bon ce truc" : "Ça sent pas bon ce truc.",
+  "C'est assez tricky comme truc" : "C'est assez délicat comme truc.",
+  "C'est compliant avec la RGPD" : "C'est conforme au RGPD.",
+  "La feature est en beta" : "La fonctionnalité est en version bêta.",
+  "C'est un MVP" : "C'est un produit minimum viable.",
+  "C'est un POC" : "C'est une preuve de concept.",
+  "C'est blocker" : "C'est bloquant.",
+  "Il faut avancer sur le scénario store-to-web" : "Il faut avancer sur le scénario magasin-vers-web.",
+  "Il faut changer le fonctionnement de la waiting-list": "Il faut changer le fonctionnement de la liste d'attente.",
+  "Peux-tu récupérer des KPIs sans la feature des flags ?": "Peux-tu récupérer des indicateurs clés de performance sans la fonctionnalité des drapeaux ?",
+  "War-room ?": "Réunion de crise ?",
+  "Ça ne touche qu'à la codebase legacy": "Ça ne touche qu'à l'ancienne base de code."
 }
